@@ -4,6 +4,6 @@ WORKDIR yapi
 RUN git clone https://github.com/YMFE/yapi.git vendors
 RUN cp vendors/config_example.json ./config.json
 WORKDIR vendors
-RUN npm install --production
+RUN npm install --production && ls
 EXPOSE 3000
-ENTRYPOINT ["node","server/app.js"]
+ENTRYPOINT ["node","./server/app.js"]
